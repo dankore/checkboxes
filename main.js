@@ -8,8 +8,16 @@ function handleCheck(e) {
    
    if(e.shiftKey && this.checked) {
        //Loop over every checkbox
-       checkboxes.forEach(checkbox => {
+   checkboxes.forEach(checkbox => {
            console.log(checkbox);
+           
+           if(checkbox === this || checkbox === lastChecked) {
+               inBetween = !inBetween;
+               console.log('START!')
+           }
+           if(inBetween) {
+               checkbox.checked = true;
+           }
        });
    }
     
